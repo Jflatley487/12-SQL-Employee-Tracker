@@ -1,0 +1,16 @@
+{
+  "name": "12-sql-employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "mysql -u root -p < schema.sql && mysql -u root -p employee_db < seeds.sql",
+    "pp": "cowsay 'poopy peepy'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.2.4"
+  }
+}

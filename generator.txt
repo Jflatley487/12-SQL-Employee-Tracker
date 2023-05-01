@@ -1,0 +1,21 @@
+use this website to generate random data: https://json-generator.com/#
+
+=== departments:
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{index()}}',
+    name: '{{company().toUpperCase()}}',
+  }
+]
+
+=== roles:
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{index()}}',
+    title: '{{firstName().toUpperCase()}}',
+    salary: '{{company().toUpperCase()}}',
+    department_id: '{{index()}}',
+  }
+]
