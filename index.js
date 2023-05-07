@@ -138,29 +138,27 @@ function viewEmployees(connection) {
 
 // Function to add a department
 function addDepartment(connection) {
-  inquirer
-    .promt({
+  inquirer.prompt({
       name: 'department',
       type: 'input',
       message: 'what is the name of the department',
     })
     .then((answer) => {
-      const query = `INSERT INTO departments (name) VALUES ('$answer.department}')`;
+      const query = `INSERT INTO departments (name) VALUES ('${answer.department}')`;
 
       connection.query(query, (err, res) => {
         if (err) throw err;
+
+        console.log(`Added department: ${answer.department}`);
+
+        mainMenu(connection);
       })
     })
-
-  console.log(`Added department: ${answer.department}`);
-
-  mainMenu(connection);
 }
 
 // Function to add a role
 function addRole(connection) {
-  inquirer
-    .prompt([
+  inquirer.prompt([
       {
         name: 'title',
         type: 'input',
@@ -192,8 +190,7 @@ function addRole(connection) {
 
 // Function to add an employee
 function addEmployee(connection) {
-  inquirer
-    .prompt([
+  inquirer.prompt([
       {
         name: 'firstName',
         type: 'input',
@@ -230,8 +227,7 @@ function addEmployee(connection) {
 }
 // Function to update an employee's role
 function updateEmployeeRole(connection) {
-  inquirer
-    .prompt([
+  inquirer.prompt([
       {
         name: 'employeeId',
         type: 'input',
